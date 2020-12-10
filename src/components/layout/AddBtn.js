@@ -16,7 +16,7 @@ const AddBtn = () => {
           </a>
         </li>
         <li>
-          <a href="#tech-modal" class="btn-floating red modal-trigger">
+          <a href="#add-tech-modal" class="btn-floating red modal-trigger">
             <i class="material-icons">person_add</i>
           </a>
         </li>
