@@ -5,7 +5,8 @@ import {
   ADD_LOG,
   DELETE_LOG,
   SET_CURRENT,
-  CLEAR_CURRENT
+  CLEAR_CURRENT,
+  UPDATE_LOG
 } from "./types";
 
 // Get Logs from DB.
@@ -51,6 +52,34 @@ export const deleteLog = (id) => {
     }
 }
 
+// Upadte Logs from DB.
+export const updateLog = log => {
+    return async (dispatch) => {
+        try {
+            setLoading();
+            const res = await fetch(`/logs/${log.id}`, {
+              method: "PUT",
+              body: JSON.stringify(log),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+
+            const data = await res.json();
+            
+            dispatch({
+              type: UPDATE_LOG,
+              payload: data,
+            });
+        } catch (error) {
+            dispatch({
+                type: LOGS_ERROR,
+                payload: error.response.data
+            })
+        }    
+    }
+}
+
 // SetCurrent Log
 export const setCurrent = log => {
     return {
@@ -76,7 +105,7 @@ export const addLog = (log) => {
                 method: "POST",
                 body: JSON.stringify(log),
                 headers: {
-                    "Content-type": "application/json"
+                    "Content-Type": "application/json"
                 }
             });
             const data = await res.json();
