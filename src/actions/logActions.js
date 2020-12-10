@@ -1,9 +1,12 @@
 import {
-    GET_LOGS,
-    SET_LOADING,
-    LOGS_ERROR,
-    ADD_LOG
-} from "./types"
+  GET_LOGS,
+  SET_LOADING,
+  LOGS_ERROR,
+  ADD_LOG,
+  DELETE_LOG,
+  SET_CURRENT,
+  CLEAR_CURRENT
+} from "./types";
 
 // Get Logs from DB.
 export const getLogs = () => {
@@ -25,6 +28,44 @@ export const getLogs = () => {
         }    
     }
 }
+
+// Delete Logs from DB.
+export const deleteLog = (id) => {
+    return async (dispatch) => {
+        try {
+            setLoading();
+            await fetch(`/logs/${id}`, {
+                method: "DELETE"
+            });
+
+            dispatch({
+              type: DELETE_LOG,
+              payload: id,
+            });
+        } catch (error) {
+            dispatch({
+                type: LOGS_ERROR,
+                payload: error.response.data
+            })
+        }    
+    }
+}
+
+// SetCurrent Log
+export const setCurrent = log => {
+    return {
+        type: SET_CURRENT,
+        payload: log
+    }
+}
+
+// Clear Current Log
+export const clearCurrent = () => {
+    return {
+        type: CLEAR_CURRENT
+    }
+}
+
 
 // Add Logs to DB.
 export const addLog = (log) => {
