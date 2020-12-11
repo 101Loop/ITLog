@@ -40,6 +40,7 @@ You can modify your data base accordingly simply find the `db.json` file and add
 ### Wanna Add Features?
 
 Want to contribute? Great!
+Open an issue and let me know what features you intend to introduce in this project
 
 License
 ----
