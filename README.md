@@ -45,7 +45,7 @@ Open an issue and let me know what features you intend to introduce in this proj
 License
 ----
 
-[MIT]()
+[MIT](https://github.com/101Loop/ITLog/blob/master/LICENSE)
 
 
 **Free Software, Hell Yeah!**
