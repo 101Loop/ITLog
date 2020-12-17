@@ -1,3 +1,4 @@
+![CodeQL](https://github.com/101Loop/ITLog/workflows/CodeQL/badge.svg)
 # IT Log
 
 
