@@ -11,6 +11,9 @@
 #eslintcache
 .eslintcache
 
+#IDE folders
+.idea/
+
 # production
 /build
 

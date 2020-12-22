@@ -34,7 +34,10 @@ $ cd itlog
 $ npm install
 $ npm run dev
 ```
-Your JSON Web Server will run on PORT 5000 and your react dev server will run PORT 3000 
+Your JSON Web Server will run on PORT `5000` and your react dev server will run PORT `3000`
+
+To checkout this repository's Database go [here](https://my-json-server.typicode.com/stephin007/ITLog) 
+
 ### Customise your Server!
 You can modify your data base accordingly simply find the `db.json` file and add the data as you wish 
 
